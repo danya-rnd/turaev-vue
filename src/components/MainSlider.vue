@@ -6,7 +6,7 @@
 				<div class="content">
 					<h1>{{ slide.name }}</h1>
 					<p>{{ slide.description }}</p>
-					<button class="border__button" href="">Посмотреть работы</button>
+					<button class="border__button">Посмотреть работы</button>
 				</div>
 				<div class="swiper-nav">
 					<div class="swiper-prev">
@@ -23,9 +23,7 @@
 
 			</swiper-slide>
 		</swiper>
-		<div class="swiper-pagination">
-
-		</div>
+		<div class="swiper-pagination"></div>
 	</div>
 </template>
 
@@ -38,7 +36,7 @@
 		name: 'MainSlider',
 		components: {
 			swiper,
-      swiperSlide
+			swiperSlide
 		},
     data() {
       return {
@@ -136,4 +134,14 @@
 		fill: none
 		&:hover
 			fill: #fff
+.swiper-pagination
+	position: absolute
+	left: 50%
+	transform: translateX(-50%)
+	bottom: 100px
+	.swiper-pagination-bullet
+		width: 18px 
+		height: 18px
+		background: #fff !important
+		margin: 0 6px
 </style>

@@ -43,5 +43,14 @@
     &:hover
       color: #000
       background: #fff
+  h2
+    font-size: 50px
+    font-weight: bold
+    line-height: 60px
+  .container-fluid
+    position: relative
+    max-width: 973px
+    width: 100%
+    margin: 0 auto
 
 </style>

@@ -6,7 +6,7 @@
 			</a>
 			<div class="menu-items">
 				<a href="">Наши объекты</a>
-				<a href="">Контакты</a>
+				<a href="/contact">Контакты</a>
 				<div class="burger-bar">
 					<a href="">Меню</a>
 					<div class="burger">
@@ -30,7 +30,7 @@
 </script>
 
 
-<style lang="sass" scoped>
+<style lang="sass">
 
 .navbar
 	width: 100%
