@@ -2,7 +2,7 @@
 	<div class="navbar">
 		<nav>
 			<a href="/">
-				<img src="@/assets/images/logo.svg" alt="">
+				<img src="@/assets/images/black-logo.svg" alt="">
 			</a>
 			<div class="menu-items">
 				<a href="/projects">Наши объекты</a>
@@ -24,20 +24,20 @@
 <script>
 
 	export default {
-		name: 'Navbar'
+		name: 'NavbarLight'
 	}
 
 </script>
 
 
-<style lang="sass">
+<style lang="sass" scoped>
 
 .navbar
+	position: relative
 	width: 100%
 	height: auto
-	padding: 25px 0 0 0
+	padding: 25px 0
 	box-sizing: border-box
-	position: absolute
 	width: 100%
 	display: flex
 	justify-content: center
@@ -56,7 +56,7 @@
 			position: relative
 			display: block
 			text-decoration: none
-			color: #fff
+			color: #000
 			cursor: pointer
 			font-size: 16px
 			line-height: 19px
@@ -85,7 +85,7 @@
 					margin: 0px
 					height: 2px
 					width: 100%
-					background: #fff
+					background: #000
 					left: 0
 					transform: rotate(0deg)
 					transition: .25s ease-in-out

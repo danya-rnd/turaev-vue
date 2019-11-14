@@ -40,6 +40,13 @@
     line-height: 28px
     transition: .4s
     cursor: pointer
+    &_black
+      color: #000
+      border-color: #000
+    &_about
+      margin-top: 40px
+      font-size: 18px
+      padding: 16px 40px
     &:hover
       color: #000
       background: #fff
@@ -52,5 +59,9 @@
     max-width: 973px
     width: 100%
     margin: 0 auto
+  h1
+    padding-bottom: 46px
+    font-size: 40px
+    line-height: 48px
 
 </style>

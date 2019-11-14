@@ -8,9 +8,9 @@
 			<div class="info-block">
 				<h3>Информация</h3>
 				<ul>
-					<li><a href="">Наши объекты</a></li>
-					<li><a href="">О компании</a></li>
-					<li><a href="">Контакты</a></li>
+					<li><a href="/projects">Наши объекты</a></li>
+					<li><a href="/about">О компании</a></li>
+					<li><a href="/contact">Контакты</a></li>
 					<li><a href="">Политика конфиденциальности</a></li>
 					<li><a href="">Пользовательское соглашение</a></li>
 				</ul>
@@ -20,7 +20,7 @@
 				<ul class="contact">
 					<li><img src="@/assets/images/icons/map.svg" alt=""><span>Москва</span></li>
 					<li><img src="@/assets/images/icons/placeholder-footer.svg" alt=""><span>ул. Липовый Парк, 4, корп.1</span></li>
-					<li><img src="@/assets/images/icons/recall-icon.svg" alt=""><a href="">+7 964 760-43-38</a></li>
+					<li><img src="@/assets/images/icons/recall-icon.svg" alt=""><a href="tel:+79647604338">+7 964 760-43-38</a></li>
 					<li><img src="@/assets/images/icons/mail.svg" alt=""><a href="">tyraev.stroy@yps.ru</a></li>
 				</ul>
 			</div>

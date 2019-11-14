@@ -1,6 +1,6 @@
 <template>
 	<div class="project-card">
-		<a href="">
+		<a :href="'/projects/' + item.id">
 			<div class="project-photo">
 				<img :src="item.projectImage" alt="">
 			</div>
@@ -8,7 +8,7 @@
 				<span class="project-description__mini">{{ item.description }}</span>
 				<div class="project-description__bottom">
 					<span class="project-description__name">{{ item.name }}</span>
-					<span class="project-description__metres">{{ item.metres }}<sup>2</sup></span>
+					<span class="project-description__metres">{{ item.metres }} м<sup>2</sup></span>
 				</div>
 			</div>
 		</a>

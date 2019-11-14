@@ -9,7 +9,7 @@
 				<Project v-for="item of info" v-bind:item="item" :key="item.id"/>
 			</div>
 			<div class="link">
-				<a href="">Посмотреть все проекты</a>
+				<router-link to="/projects">Посмотреть все проекты</router-link>
 			</div>
 		</div>
 		<ShortlyAbout />
@@ -40,38 +40,16 @@
 		},
 		data() {
 			return {
-				// projects: [
-				// 	{
-				// 		id: 1,
-				// 		photo: require('@/assets/images/projects/project-1.png'),
-				// 		description: '2 этажа, 4 спальни',
-				// 		name: 'Премиум',
-				// 		quadro: '320 м'
-				// 	},
-				// 	{
-				// 		id: 2,
-				// 		photo: require('@/assets/images/projects/project-2.png'),
-				// 		description: '2 этажа, 4 спальни',
-				// 		name: 'Премиум',
-				// 		quadro: '320 м'
-				// 	},
-				// 	{
-				// 		id: 3,
-				// 		photo: require('@/assets/images/projects/project-3.png'),
-				// 		description: '2 этажа, 4 спальни',
-				// 		name: 'Премиум',
-				// 		quadro: '320 м'
-				// 	}
-				// ],
 				info: null
 			};
 
 		},
 		mounted() {
-				axios
-					.get('http://localhost:3000/projects')
-					.then(response => (this.info = response.data.projects));
-			}
+			axios
+				.get('http://localhost:3000/projects')
+				.then(response => (this.info = response.data.projects));
+			
+		}
 	}
 
 </script>
