@@ -38,7 +38,7 @@ export default {
     },
     mounted() {
         axios
-            .get('http://localhost:3000/projects')
+            .get('http://94.250.251.234:3000/api/projects')
             .then(response => (this.info = response.data.projects));
     },
 }
