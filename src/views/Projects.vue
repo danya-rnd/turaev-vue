@@ -3,13 +3,13 @@
         <NavbarLight />
         <div class="projects-page__wrapp content">
             <h1>Посмотрите на популярные объекты у наших клиентов</h1>
-            <div class="projects-navbar">
+            <!-- <div class="projects-navbar">
                 <a class="active">Дома</a>
                 <a>Коттеджи</a>
                 <a>Бани</a>
                 <a>Садовые домики</a>
                 <a>Другое</a>
-            </div>
+            </div> -->
             <div class="projects-page__content">
                 <Project v-for="item of info" v-bind:item="item" :key="item.id" />
             </div>
@@ -18,30 +18,30 @@
     </div>
 </template>
 <script>
-import NavbarLight from '@/components/NavbarLight.vue';
-import Footer from '@/components/Footer.vue';
-import Project from '@/components/Project.vue';
+    import NavbarLight from '@/components/NavbarLight.vue';
+    import Footer from '@/components/Footer.vue';
+    import Project from '@/components/Project.vue';
 
-import axios from 'axios';
+    import { db } from '../main'
 
-export default {
-    name: 'Projects',
-    components: {
-        NavbarLight,
-        Footer,
-        Project
-    },
-    data() {
-        return {
-            info: null,
-        };
-    },
-    mounted() {
-        axios
-            .get('http://94.250.251.234:3000/api/projects')
-            .then(response => (this.info = response.data.projects));
-    },
-}
+    export default {
+        name: 'Projects',
+        components: {
+            NavbarLight,
+            Footer,
+            Project
+        },
+        data() {
+            return {
+                info: []
+            };
+        },
+        firestore() {
+            return {
+                info: db.collection('project-cards'),
+            }
+        },
+    }
 </script>
 <style lang="sass">
 	.projects-page

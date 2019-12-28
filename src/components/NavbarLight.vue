@@ -5,11 +5,12 @@
 				<img src="@/assets/images/black-logo.svg" alt="">
 			</a>
 			<div class="menu-items">
-				<a href="/projects">Наши объекты</a>
-				<a href="/contact">Контакты</a>
-				<div class="burger-bar">
-					<a>Меню</a>
-					<div class="burger">
+				<a v-if="menu === false" class="menu-items__link" href="/projects">Наши объекты</a>
+				<a v-if="menu === false" class="menu-items__link" href="/contact">Контакты</a>
+				<div class="burger-bar" @click="toggleNav">
+					<a v-if="nav === false">Меню</a>
+					<a v-if="nav === true">Закрыть</a>
+					<div class="burger" :class="{ open: nav }">
 						<span></span>
 						<span></span>
 						<span></span>
@@ -18,13 +19,36 @@
 				</div>
 			</div>
 		</nav>
+		<Menu :class="{ active: menu }" />
 	</div>
 </template>
 
 <script>
+		
+	import Menu from './Menu.vue'
 
 	export default {
-		name: 'NavbarLight'
+		name: 'NavbarLight',
+		components: {
+			Menu
+		},
+		data() {
+			return {
+				nav: false,
+				menu: false
+			}
+		},
+		methods: {
+			toggleNav() {
+				this.nav = !this.nav
+				this.menu = !this.menu
+				if ( this.menu === true ) {
+					document.body.classList.add("modal-open")
+				} else {
+					document.body.classList.remove("modal-open");
+				}
+			}
+		}
 	}
 
 </script>
@@ -40,7 +64,9 @@
 	box-sizing: border-box
 	width: 100%
 	display: flex
+	background-color: #fff
 	justify-content: center
+	z-index: 1500
 	nav
 		position: relative
 		display: flex
@@ -51,7 +77,7 @@
 		width: 100%
 		padding: 0 20px
 		margin: 0 auto
-		z-index: 20
+		z-index: 1500
 		a
 			position: relative
 			display: block
@@ -63,9 +89,11 @@
 		.menu-items
 			position: relative
 			display: flex
-			justify-content: space-between
+			justify-content: flex-end
 			max-width: 443px
 			width: 100%
+			&__link
+				margin-right: 37px
 			.burger-bar
 				display: flex
 				align-items: center

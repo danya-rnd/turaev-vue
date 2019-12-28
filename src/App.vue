@@ -20,6 +20,8 @@
     margin: 0
   body
     font-family: Gilroy
+    &.modal-open
+      overflow-y: hidden
   .content
     position: relative
     z-index: 20
@@ -40,16 +42,20 @@
     line-height: 28px
     transition: .4s
     cursor: pointer
+    outline: none
     &_black
       color: #000
       border-color: #000
+      &:hover
+        color: #fff
+        background: #000
     &_about
       margin-top: 40px
       font-size: 18px
       padding: 16px 40px
-    &:hover
-      color: #000
-      background: #fff
+      &:hover
+        color: #000
+        background: #fff
   h2
     font-size: 50px
     font-weight: bold

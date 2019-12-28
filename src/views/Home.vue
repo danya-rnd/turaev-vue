@@ -25,8 +25,7 @@
 	import Project from '@/components/Project.vue';
 	import ShortlyAbout from '@/components/ShortlyAbout.vue';
 	import Footer from '@/components/Footer.vue';
-
-	import axios from 'axios';
+	import { db } from '../main'
 
 	export default {
 		name: 'home',
@@ -40,15 +39,14 @@
 		},
 		data() {
 			return {
-				info: null
+				info: []
 			};
 
 		},
-		mounted() {
-			axios
-				.get('http://94.250.251.234:3000/api/projects')
-				.then(response => (this.info = response.data.projects));
-			
+		firestore() {
+			return {
+				info: db.collection('project-cards'),
+			}
 		}
 	}
 
